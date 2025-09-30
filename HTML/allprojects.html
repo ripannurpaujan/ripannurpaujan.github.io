@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <title>Projects</title>
+    <link rel="stylesheet" href="../CSS/allprojects.css" />
+  </head>
+  <body>
+    <!-- Navbar Section-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="#">Ripan Nurpaujan</a>
+
+        <!-- Toggle button (mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link fw-medium" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="index.html #about">About</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="index.html #projects">Projects</a></li>
+            <!-- <li class="nav-item"><a class="nav-link fw-medium" href="#testimonials">Testimonials</a></li> -->
+            <li class="nav-item"><a class="nav-link fw-medium" href="index.html #faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="index.html #contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Hire Me button -->
+        <div class="d-none d-lg-block">
+          <a href="index.html #contact" class="btn btn-primary rounded-3 px-4">Hire Me</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <!-- Header -->
+      <div class="header">
+        <h1><span class="gradient-text2">All Projects</span></h1>
+        <p>Comprehensive collection of my engineering projects across various disciplines and industries.</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter mb-4">
+        <div class="row align-items-center g-2">
+          <!-- Label -->
+          <div class="col-auto">
+            <label for="categoryFilter" class="col-form-label fw-semibold"> Filter by category: </label>
+          </div>
+
+          <!-- Select -->
+          <div class="col-auto">
+            <select id="categoryFilter" class="form-select">
+              <option value="all">All Categories</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Thermal Engineering">Thermal Engineering</option>
+              <option value="Robotics">Robotics</option>
+              <option value="Software">Software</option>
+              <option value="Renewable Energy">Renewable Energy</option>
+              <option value="Industry 4.0">Industry 4.0</option>
+              <option value="Hydraulics">Hydraulics</option>
+              <option value="Automotive">Automotive</option>
+              <option value="Testing">Testing</option>
+            </select>
+          </div>
+
+          <!-- Result count -->
+          <div class="col-auto">
+            <span id="resultCount" class="text-muted small"> 9 projects found </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <img src="../img/Projects/nanofiber.jpg" alt="" />
+                <!-- <span class="project-icon">🧪</span>
+                  <p class="project-category">Research</p> -->
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Final Year Project: Nanofiber Membranes</h3>
+              <p class="project-description">Developed BN-PVC/PEG nanofiber membranes for heavy metal removal, achieving 39% Fe removal efficiency.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Nanomaterials</span>
+                <span class="skill-badge">Electrospinning</span>
+                <span class="skill-badge">Filtration</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=nanofiber_fe" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <img src="../img/Projects/hospitalbed.jpg" alt="" />
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Hospital Bed Manufacturing</h3>
+              <p class="project-description">Designed a hospital bed prototype supporting ~150 kg, overseeing design, materials, and project reporting.</p>
+              <div class="project-skills">
+                <span class="skill-badge">CAD</span>
+                <span class="skill-badge">Manufacturing</span>
+                <span class="skill-badge">Project Management</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=bedmanufacturing_id" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">🌍</span>
+                <p class="project-category">Simulation</p>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Carbon Capture Simulation</h3>
+              <p class="project-description">Simulated carbon capture process using ANSYS, modeling gas flow and CO₂ absorption efficiency.</p>
+              <div class="project-skills">
+                <span class="skill-badge">ANSYS</span>
+                <span class="skill-badge">Simulation</span>
+                <span class="skill-badge">Carbon Capture</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=carboncapture_sim" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">🔧</span>
+                <p class="project-category">Laboratory</p>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Structural Statics Laboratory Assistant</h3>
+              <p class="project-description">Assisted in the Structural Statics Laboratory by monitoring students and supporting successful practicum completion.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Teaching</span>
+                <span class="skill-badge">Lab Safety</span>
+                <span class="skill-badge">Evaluation</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=structural_lab_asst" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">💻</span>
+                <p class="project-category">Numerical Methods</p>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Mini Project: Numerical Methods</h3>
+              <p class="project-description">Developed and optimized Python programs for solving linear and quadratic systems, and coordinated team tasks.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Numerical Analysis</span>
+                <span class="skill-badge">Teamwork</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=numerical_methods_project" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">🤖</span>
+                <p class="project-category">Machine Learning</p>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Mini Project: Car Price Prediction</h3>
+              <p class="project-description">Developed ML models, with Decision Tree achieving R² = 0.94, and handled preprocessing and reporting</p>
+              <div class="project-skills">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">Data Analysis</span>
+              </div>
+            </div>
+
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=car_price_prediction" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card h-100">
+            <!-- Project Image -->
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">⤴</span>
+                <p class="project-category">Energy</p>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">Fluid Mechanics Laboratory Asistant</h3>
+              <p class="project-description">Guided 25 students in pump experiments, ensuring accurate measurements and improved understanding of fluid systems.</p>
+
+              <!-- Skills -->
+              <div class="project-skills">
+                <span class="skill-badge">Teaching</span>
+                <span class="skill-badge">Fluid Dynamics</span>
+                <span class="skill-badge">Data Analysis</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=fluid_lab_asst" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="stats container my-5">
+        <div class="bg-gradient-custom rounded-4 p-3 text-center">
+          <h2 class="fw-bold mb-4">Project Statistics</h2>
+          <div class="row g-4">
+            <div class="col-6 col-md-3">
+              <div class="fs-2 fw-bold">7</div>
+              <p class="sub-title text-light">Total Projects</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="fs-2 fw-bold">8</div>
+              <p class="text-light">Categories</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="fs-2 fw-bold">9</div>
+              <p class="text-light">Technologies</p>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="fs-2 fw-bold">&lt;1</div>
+              <p class="text-light">Years Experience</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Contact -->
+
+    <!-- Footer -->
+    <div class="site-footer">
+      <div class="container">
+        <p>© 2024 Ripan Nurpaujan. All rights reserved.</p>
+        <p>Mechanical Engineer | Material Engineer | Simulation Engineer | Mechanical Design</p>
+      </div>
+    </div>
+
+    <script src="projects.js"></script>
+  </body>
+</html>

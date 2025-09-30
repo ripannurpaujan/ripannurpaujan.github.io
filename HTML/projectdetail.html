@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../CSS/projectdetails.css" />
+    <title>Project Details</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <a href="allprojects.html" class="back-link" onclick="goBack()" target="_blank">
+          <i class="bi bi-arrow-left me-2"></i>
+          Back to Portfolio
+        </a>
+      </div>
+    </nav>
+
+    <main class="main-content py-5">
+      <div class="container py-5">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-meta">
+            <span class="badge" id="project-category"></span>
+            <span class="divider">•</span>
+            <span style="color: hsl(var(--muted-foreground))" id="project-date"></span>
+          </div>
+          <h1 class="title" id="project-title"></h1>
+          <p class="subtitle" id="project-subtitle"></p>
+          <p class="description" id="project-description"></p>
+        </header>
+
+        <div class="row g-4">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <!-- Hero Image -->
+            <div class="card mb-4 text-center">
+              <div class="hero-image">
+                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                  <div class="carousel-inner" id="carousel-images">
+                    <!-- gambar project akan dimasukin lewat JS -->
+                  </div>
+
+                  <!-- tombol navigasi -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Overview -->
+            <div class="card mb-4">
+              <div class="card-header">
+                <h2 class="card-title">Project Overview</h2>
+              </div>
+              <div class="card-content">
+                <div class="prose" id="project-overview-content"></div>
+              </div>
+            </div>
+
+            <!-- Challenges & Solutions -->
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="card h-100">
+                  <header class="card-header">
+                    <h2 class="card-title">Challenges</h2>
+                  </header>
+                  <div class="card-content">
+                    <ul class="challenge-list" id="challenges-list"></ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card h-100">
+                  <header class="card-header">
+                    <h2 class="card-title">Solutions</h2>
+                  </header>
+                  <div class="card-content">
+                    <ul class="solution-list" id="solutions-list"></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results -->
+            <div class="card mb-4 gradient-bg">
+              <div class="card-header gradient-bg text-center">
+                <h2 class="card-title result-title">Project Results</h2>
+              </div>
+              <div class="card-body">
+                <div class="row g-3" id="results-container"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="sidebar col-lg-4">
+            <!-- Project Info -->
+            <div class="card mb-4">
+              <header class="card-header">
+                <h3 class="card-title" style="font-size: 1.125rem">Project Info</h3>
+              </header>
+              <div class="card-content">
+                <div class="info-item">
+                  <i data-lucide="user"></i>
+                  <div>
+                    <div class="info-label">Client</div>
+                    <div class="info-value" id="info-client"></div>
+                  </div>
+                </div>
+
+                <hr class="separator" />
+
+                <div class="info-item">
+                  <i data-lucide="calendar"></i>
+                  <div>
+                    <div class="info-label">Duration</div>
+                    <div class="info-value" id="info-duration"></div>
+                  </div>
+                </div>
+
+                <hr class="separator" />
+
+                <div class="info-item">
+                  <i data-lucide="tag"></i>
+                  <div>
+                    <div class="info-label">Category</div>
+                    <div class="info-value" id="info-category"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Skills Used -->
+            <div class="card mb-4">
+              <header class="card-header">
+                <h3 class="card-title" style="font-size: 1.125rem">Technologies Used</h3>
+              </header>
+              <div class="card-content">
+                <div class="skills-grid" id="skills-grid"></div>
+              </div>
+            </div>
+
+            <!-- Other Projects -->
+            <div class="card mb-4">
+              <header class="card-header">
+                <h3 class="card-title other-projects">Other Projects</h3>
+              </header>
+              <div class="list-group list-group-flush" id="other-projects"></div>
+            </div>
+
+            <!-- CTA -->
+            <div class="card cta-card mb-4 p-4">
+              <div class="card-content">
+                <h3 class="cta-title">Interested in Similar Work?</h3>
+                <p class="cta-description">Let's discuss how I can help with your engineering project.</p>
+                <a href="index.html #contact" class="button button-secondary"> Get In Touch </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- LIBRARIES -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.6.2/dist/countUp.umd.js"></script>
+
+    <!-- Load Data Script -->
+    <script src="../Database/projectdata.js"></script>
+    <script src="../js/projectdetails.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

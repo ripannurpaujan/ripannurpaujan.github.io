@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Final Year Research - Membrane Nanofiber",
+    "category": "Research",
+    "client": "Universitas Muhammadiyah Yogyakarta",
+    "duration": "6 Months",
+    "country": "Indonesia",
+    "description": "Research on nanofiber membranes for water treatment...",
+    "image": "img/projects/project1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Hospital Bed Design",
+    "category": "Mechanical Design",
+    "client": "Capstone Project",
+    "duration": "4 Months",
+    "country": "Indonesia",
+    "description": "Designed a hospital bed with CAD & structural analysis...",
+    "image": "img/projects/project2.jpg"
+  }
+]
