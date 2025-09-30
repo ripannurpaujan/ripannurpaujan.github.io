@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- My Aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- my css -->
+    <link rel="stylesheet" href="CSS/style.css" />
+
+    <title>My Portfolio | Ripan Nurpaujan</title>
+  </head>
+  <body id="home">
+    <!-- Navbar Section-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="#">Ripan Nurpaujan</a>
+
+        <!-- Toggle button (mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link fw-medium" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="HTML/allprojects.html">Projects</a></li>
+            <!-- <li class="nav-item"><a class="nav-link fw-medium" href="#testimonials">Testimonials</a></li> -->
+            <li class="nav-item"><a class="nav-link fw-medium" href="#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link fw-medium" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Hire Me button -->
+        <div class="d-none d-lg-block">
+          <a href="#contact" class="btn btn-primary rounded-3 px-4">Hire Me</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: url('img/hero.png') no-repeat center center/cover">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Text kiri -->
+          <div class="col-md-6 hero-text">
+            <h5 class="hello-text">Hello, I’m</h5>
+            <h1 class="intro gradient-text font-bold">Ripan Nurpaujan</h1>
+            <h3 class="role">Mechanical Engineer</h3>
+            <p class="lead"></p>
+            <div class="skills">
+              <span class="skill">CAD Design</span>
+              <span class="skill">Material Characterization</span>
+              <span class="skill">Ansys Simulation</span>
+              <span class="skill">Data Analysis</span>
+              <span class="skill">Python</span>
+              <span class="skill">Project Management</span>
+            </div>
+            <div class="hero-buttons">
+              <a href="HTML/allprojects.html" class="btn btn-lg btn-portfolio" target="_blank">View Portfolio <span class="arrow">&rarr;</span></a>
+              <a href="File/Ripan Nurpaujan-CV Master.pdf" class="btn btn-outline-dark btn-lg btn-hire" target="_blank"><i class="bi bi-download me-2"></i>Download CV</a>
+            </div>
+          </div>
+
+          <!-- Foto kanan -->
+          <div class="col-md-6 text-center hero-img">
+            <div class="img-wrapper">
+              <img src="img/image.png" alt="Ripan Nurpaujan" class="img-fluid rounded-circle" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section-->
+    <section id="about" class="about py-1">
+      <div class="container">
+        <div class="profile">
+          <div class="row align-items-center">
+            <!-- Foto -->
+            <div class="profile-card col-md-5 text-center" data-aos="fade-right" data-aos-duration="1000">
+              <div class="profile-img">
+                <img src="img/profile.png" alt="Profile" />
+              </div>
+            </div>
+
+            <div class="col-md-7" data-aos="fade-left" data-aos-duration="1000">
+              <div class="section-title2">
+                <div class="divider"></div>
+                <h4 class="text accent mb-2">About Me</h4>
+              </div>
+              <h2>Who is <span class="text-accent">Ripan Nurpaujan?</span></h2>
+
+              <p class="my-3">
+                I am a Mechanical Engineering graduate from Universitas Muhammadiyah Yogyakarta with strong analytical and problem-solving skills. During my undergraduate research, I developed nanofiber membranes for heavy metal separation,
+                improving Fe filtration efficiency by 39%. I combine theoretical knowledge with practical implementation.
+              </p>
+              <p>
+                I am proficient in CAD design, Ansys simulation, Python, and materials testing, I am passionate about energy systems, advanced materials, and product design, applying engineering principles to create sustainable solutions in
+                collaborative teams.
+              </p>
+
+              <!-- Statistik -->
+              <div class="row text-center text-md-start mb-4">
+                <div class="col-4">
+                  <h3 class="text-accent">7</h3>
+                  <p>Project Completed</p>
+                </div>
+                <div class="col-4">
+                  <h3 class="text-accent">0</h3>
+                  <p>Industry Covered</p>
+                </div>
+                <div class="col-4">
+                  <h3 class="text-accent">&lt;1</h3>
+                  <p>Years of Experience</p>
+                </div>
+              </div>
+
+              <!-- Tombol -->
+              <a href="File/Ripan Nurpaujan-CV Master.pdf " target="_blank" class="btn btn-outline-accent custom-btn"> Download CV <span>&rarr;</span> </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tools">
+          <div class="my-tools py-5">
+            <div class="container text-center">
+              <p class="text-secondary">— My Favorite Tools</p>
+              <h2 class="display-5 mb-5 fw-bold"><span class="gradient-text">Technologies and Software</span> that Support My skills in Engineering and Design.</h2>
+              <div class="row justify-content-center g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                  <div class="tool-card bg-light rounded-5 h-100">
+                    <div class="tool-logo">
+                      <img src="img/Tools Logo/solidworks.png" alt="SolidWorks Logo" class="custom-logo mb-3" />
+                    </div>
+                    <h6>SolidWorks</h6>
+                    <p>Design CAD</p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                  <div class="tool-card bg-light shadow-sm rounded-5 h-100">
+                    <div class="tool-logo">
+                      <img src="img/Tools Logo/ansys.png" alt="Ansys Logo" class="mb-3" />
+                    </div>
+                    <h6 class="fw-medium">Ansys</h6>
+                    <p>Simulation</p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                  <div class="tool-card bg-light shadow-sm rounded-5 h-100">
+                    <div class="tool-logo">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="Python Logo" class="mb-3" />
+                    </div>
+                    <h6 class="fw-medium">Python</h6>
+                    <p>Programming & automation</p>
+                  </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                  <div class="tool-card bg-light shadow-sm rounded-5 h-100">
+                    <div class="tool-logo">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/826px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png"
+                        alt="Excel Logo"
+                        class="mb-3"
+                      />
+                    </div>
+                    <h6>Excel</h6>
+                    <p>Data Analysis</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Section -->
+    <section class="portfolio py-5" id="projects">
+      <div class="container">
+        <div class="d-flex justify-content-center mb-5">
+          <div class="text-center">
+            <h1 class="section-title">My <span class="gradient-text2">Projects</span></h1>
+            <p class="section-note">Explore my engineering projects showcasing innovation, technical expertise, and problem-solving across various mechanical engineering disciplines.</p>
+          </div>
+        </div>
+        <div class="row g-4 mb-5">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="project-card h-100">
+              <div class="project-image text-center">
+                <div>
+                  <img src="img/Projects/nanofiber.jpg" alt="" />
+                  <!-- <span class="project-icon">🧪</span>
+                  <p class="project-category">Research</p> -->
+                </div>
+              </div>
+
+              <div class="project-content">
+                <h3 class="project-title">Final Year Project: Nanofiber Membranes</h3>
+                <p class="project-description">Developed BN-PVC/PEG nanofiber membranes for heavy metal removal, achieving 39% Fe removal efficiency.</p>
+                <div class="project-skills">
+                  <span class="skill-badge">Nanomaterials</span>
+                  <span class="skill-badge">Electrospinning</span>
+                  <span class="skill-badge">Filtration</span>
+                </div>
+              </div>
+
+              <div class="project-footer">
+                <a href="HTML/projectdetail.html?id=nanofiber_fe" class="project-btn">View Details →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="project-card h-100">
+              <div class="project-image text-center">
+                <div>
+                  <img src="img/Projects/hospitalbed.jpg" alt="" />
+                </div>
+              </div>
+
+              <div class="project-content">
+                <h3 class="project-title">Hospital Bed Manufacturing</h3>
+                <p class="project-description">Designed a hospital bed prototype supporting ~150 kg, overseeing design, materials, and project reporting.</p>
+                <div class="project-skills">
+                  <span class="skill-badge">CAD</span>
+                  <span class="skill-badge">Manufacturing</span>
+                  <span class="skill-badge">Project Management</span>
+                </div>
+              </div>
+
+              <div class="project-footer">
+                <a href="HTML/projectdetail.html?id=bedmanufacturing_id" class="project-btn">View Details →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="project-card h-100">
+              <div class="project-image text-center">
+                <div>
+                  <span class="project-icon">🌍</span>
+                  <p class="project-category">Simulation</p>
+                </div>
+              </div>
+
+              <div class="project-content">
+                <h3 class="project-title">Carbon Capture Simulation</h3>
+                <p class="project-description">Simulated carbon capture process using ANSYS, modeling gas flow and CO₂ absorption efficiency.</p>
+                <div class="project-skills">
+                  <span class="skill-badge">ANSYS</span>
+                  <span class="skill-badge">Simulation</span>
+                  <span class="skill-badge">Carbon Capture</span>
+                </div>
+              </div>
+
+              <div class="project-footer">
+                <a href="HTML/projectdetail.html?id=carboncapture_sim" class="project-btn">View Details →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center">
+          <a href="HTML/allprojects.html" class="project-btn big"> View All Projects → </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section id="testimonials" class="testimonials-section">
+      <div class="testimonials-header">
+        <h2>What Colleagues Say</h2>
+        <p>Feedback from industry professionals I've had the pleasure to work with</p>
+        <div class="divider"></div>
+      </div>
+
+      <div class="testimonials-container">
+        <div class="testimonial active">
+          <div class="quote">❝</div>
+          <blockquote>"Ripan is very dedicated and detail-oriented in every project he handles."</blockquote>
+          <div class="author">
+            <img src="https://via.placeholder.com/64" alt="Person 1" />
+            <div>
+              <div class="name">John Doe</div>
+              <div class="position">Senior Engineer</div>
+              <div class="company">TechCorp Inc.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="quote">❝</div>
+          <blockquote>"A true team player who always delivers high-quality results on time."</blockquote>
+          <div class="author">
+            <img src="https://via.placeholder.com/64" alt="Person 2" />
+            <div>
+              <div class="name">Jane Smith</div>
+              <div class="position">Product Designer</div>
+              <div class="company">DesignHub</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial">
+          <div class="quote">❝</div>
+          <blockquote>"His expertise in CAD and machine learning really impressed me."</blockquote>
+          <div class="author">
+            <img src="https://via.placeholder.com/64" alt="Person 3" />
+            <div>
+              <div class="name">Michael Lee</div>
+              <div class="position">Project Manager</div>
+              <div class="company">InnovateX</div>
+            </div>
+          </div>
+        </div>
+
+        
+        <button class="nav-btn prev">⟨</button>
+        <button class="nav-btn next">⟩</button>
+
+        
+        <div class="dots"></div>
+      </div>
+    </section> -->
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5">
+      <div class="container text-center text-white">
+        <!-- Heading -->
+        <p class="faq-subtitle">— FAQs</p>
+        <h2 class="fw-bold mb-4">Questions? <span class="fst-italic faq-highlight">Look here.</span></h2>
+        <p class="section-desc faq">Common questions about my engineering services, expertise, and working approach.</p>
+
+        <!-- Accordion -->
+        <div class="accordion" id="faqAccordion">
+          <!-- Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">What fields have you worked in?</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                I have worked on mechanical engineering projects such as product design, robotics, and sustainable solutions, as well as data-related projects involving Python programming and machine learning.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Can I download your resume/CV for more details?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Certainly! You can download my resume directly from my website. It provides a complete overview of my education, skills, and professional experience.</div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Are you available for freelance or collaboration work?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes, I am open to freelance and collaboration opportunities, especially in mechanical design, data analysis, and machine learning projects.</div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                What tools and software do you use in your work?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">I use SolidWorks and AutoCAD for design, ANSYS for simulation, and Python (with libraries such as Pandas, Scikit-learn, and Matplotlib) for data analysis and machine learning.</div>
+            </div>
+          </div>
+
+          <!-- Item 5 (Portfolio Example: Hospital Bed) -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Can you give an example of a mechanical engineering project you've worked on?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                One of my capstone projects was designing a hospital bed capable of supporting up to 150 kg. I applied CAD modeling and structural analysis to ensure safety, functionality, and cost efficiency.
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 (Portfolio Example: Predictive Maintenance) -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Do you have experience in data-driven projects?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, I have worked on a machine predictive maintenance project using synthetic data. I applied Python and machine learning models to classify machine failures based on parameters like temperature, rotational speed, and
+                torque.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-start g-5">
+          <!-- Left Column -->
+          <div class="col-md-5">
+            <p class="text-secondary">— Contact Me</p>
+            <h1 class="mb-4 section-title">Let’s Connect and Discuss <span class="gradient-text2">Engineering Projects</span></h1>
+            <p class="mb-4 text-muted section-note">Feel free to reach out for collaborations, project discussions, or opportunities in engineering and design.</p>
+
+            <!-- Contact Info -->
+            <ul class="list-unstyled">
+              <li class="mb-3 d-flex align-items-center">
+                <i class="bi bi-envelope-fill text-accent me-3 fs-5"></i>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fauzanivan21@gmail.com" class="text-dark">fauzanivan21@gmail.com</a>
+              </li>
+              <li class="mb-3 d-flex align-items-center">
+                <i class="bi bi-linkedin text-accent me-3 fs-5"></i>
+                <a href="https://linkedin.com/in/ripannurpaujan" target="_blank" class="text-dark">linkedin.com/in/ripannurpaujan</a>
+              </li>
+              <li class="mb-3 d-flex align-items-center">
+                <i class="bi bi-telephone-fill text-accent me-3 fs-5"></i>
+                <a href="https://wa.me/6281384331797" target="_blank" class="text-dark">+62 813 8433 1797</a>
+              </li>
+            </ul>
+
+            <!-- Navigation Links -->
+            <div class="mt-4">
+              <h6 class="fw-bold text-accent">Navigation</h6>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#home" class="text-dark text-decoration-none">Home</a></li>
+                <li class="list-inline-item"><a href="#about" class="text-dark text-decoration-none">About</a></li>
+                <li class="list-inline-item"><a href="HTML/allprojects.html" class="text-dark text-decoration-none">Projects</a></li>
+                <!-- <li class="list-inline-item"><a href="#projects" class="text-dark text-decoration-none">Testimonials</a></li> -->
+                <li class="list-inline-item"><a href="#FAQ" class="text-dark text-decoration-none">FAQ</a></li>
+                <li class="list-inline-item"><a href="#contact" class="text-dark text-decoration-none">Contact</a></li>
+              </ul>
+            </div>
+
+            <!-- Social Icons (Logo Only) -->
+            <div class="social-connect">
+              <h6 class="fw-bold text-accent">Connect With Me</h6>
+              <div class="social-links">
+                <a href="https://github.com/ripannurpaujan" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/ripannurpaujan" target="_blank" rel="noopener noreferrer" class="social-link linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/_rvaann_/" target="_blank" rel="noopener noreferrer" class="social-link instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-7">
+            <form name="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Name *</label>
+                  <input type="text" class="form-control" placeholder="Your Full Name" required name="Name" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email *</label>
+                  <input type="email" class="form-control" placeholder="example@gmail.com" required name="Email" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Phone *</label>
+                  <input type="text" class="form-control" placeholder="Enter Phone Number" required name="Phone" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Interested Area *</label>
+                  <select class="form-select" required name="Interested_area">
+                    <option selected disabled>Select</option>
+                    <option>Mechanical Design</option>
+                    <option>Product Development</option>
+                    <option>Simulation / Analysis</option>
+                    <option>Manufacturing Support</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Your Message *</label>
+                  <textarea class="form-control" rows="4" placeholder="Enter here.." required name="Message"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-blue px-4 py-2 rounded-pill">Submit →</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section-->
+    <div class="site-footer">
+      <div class="container">
+        <p>© 2025 Ripan Nurpaujan. All rights reserved.</p>
+        <p>Mechanical Engineer | Material Engineer | Simulation Engineer | Mechanical Design | Sustainable Solutions</p>
+      </div>
+    </div>
+
+    <!-- FONT AWESOME -->
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+
+    <!-- PROJECT JS -->
+    <!-- <script src="js/project.js"></script> -->
+    <script src="js/terstimonialcrousels.js"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ once: true });
+    </script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+    </script>
+    <script src="js/animations.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- Vanilla Tilt -->
+    <!-- <script src="../js/vanilla-tilt.min.js"></script>
+    <script src="../js/tilt.js"></script> -->
+
+    <!-- Contact Form -->
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyRjCZhC5EkHjkEki7dBGcX7jJwbE4U_orl3qnVr7xVbsaCl0TL70_kE1g8XA5HSRx8BA/exec";
+      const form = document.forms["contact-form"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => console.log("Success!", response))
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
