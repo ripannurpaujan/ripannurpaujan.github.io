@@ -62,30 +62,31 @@
 
           <!-- Select -->
           <div class="col-auto">
-            <select id="categoryFilter" class="form-select">
+            <select id="categoryFilter" class="form-select w-auto d-inline-block">
               <option value="all">All Categories</option>
+              <option value="Research">Research</option>
+              <option value="Material">Material</option>
               <option value="Manufacturing">Manufacturing</option>
-              <option value="Thermal Engineering">Thermal Engineering</option>
-              <option value="Robotics">Robotics</option>
-              <option value="Software">Software</option>
-              <option value="Renewable Energy">Renewable Energy</option>
-              <option value="Industry 4.0">Industry 4.0</option>
-              <option value="Hydraulics">Hydraulics</option>
-              <option value="Automotive">Automotive</option>
-              <option value="Testing">Testing</option>
+              <option value="Simulation">Simulation</option>
+              <option value="Laboratory">Laboratory</option>
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="CAD">CAD</option>
+              <option value="Python">Python</option>
+              <option value="Energy">Energy</option>
             </select>
+            <span id="resultCount" class="ms-3 text-muted"></span>
           </div>
 
           <!-- Result count -->
-          <div class="col-auto">
+          <!-- <div class="col-auto">
             <span id="resultCount" class="text-muted small"> 9 projects found </span>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <!-- Projects Grid -->
-      <div class="row g-4 mb-5">
-        <div class="col-md-6 col-lg-4">
+      <div id="projectsContainer" class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Material, Research, Laboratory">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -111,7 +112,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing, CAD">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -135,7 +136,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Simulation, Energy">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -160,7 +161,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Laboratory">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -185,7 +186,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Programming, Python">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -210,7 +211,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Machine Learning, Programming, Python">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -235,7 +236,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Energy, Laboratory">
           <div class="project-card h-100">
             <!-- Project Image -->
             <div class="project-image text-center">
@@ -299,6 +300,45 @@
       </div>
     </div>
 
-    <script src="projects.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterSelect = document.getElementById("categoryFilter");
+        const resultCount = document.getElementById("resultCount");
+        const projectItems = document.querySelectorAll(".project-item");
+
+        function filterProjects() {
+          const selectedCategory = filterSelect.value;
+          let visibleCount = 0;
+
+          projectItems.forEach(function (item) {
+            const itemCategory = item.getAttribute("data-category");
+
+            // kalau pakai koma, pisah dulu
+            const categories = itemCategory.split(",").map((cat) => cat.trim());
+
+            if (selectedCategory === "all" || categories.includes(selectedCategory)) {
+              item.style.display = ""; // ✅ biarin bootstrap yang atur col nya
+              item.style.animation = "fadeIn 0.5s ease-in";
+              visibleCount++;
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+          updateResultCount(visibleCount);
+        }
+
+        function updateResultCount(count) {
+          const projectText = count === 1 ? "project" : "projects";
+          resultCount.textContent = `${count} ${projectText} found`;
+        }
+
+        // Event listener
+        filterSelect.addEventListener("change", filterProjects);
+
+        // Initial
+        updateResultCount(projectItems.length);
+      });
+    </script>
   </body>
 </html>
