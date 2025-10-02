@@ -262,33 +262,15 @@ nav .container .navbar-brand {
   justify-content: center;
   margin: 0 auto;
 }
-.cert-card {
-  border-radius: 14px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-.cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Lingkaran icon */
-.icon-circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px;
-}
 
 .tools {
   margin-top: 5px;
 }
+
 .my-tools {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* biar semua card sama tinggi */
   gap: 2rem;
   flex-wrap: wrap;
   text-align: center;
@@ -297,17 +279,22 @@ nav .container .navbar-brand {
 
 .tool-card {
   display: flex;
-  width: 150px;
-  max-height: 200px;
   flex-direction: column;
+  justify-content: space-between; /* atur konten atas & bawah */
   align-items: center;
-  border-radius: 40px;
-  transition: border 0.2s ease-in-out;
+  width: 180px;
+  min-height: 260px; /* lebih tinggi biar lega */
+  padding: 15px;
+  border-radius: 25px;
+  background: #fff;
   border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 
 .tool-card:hover {
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  /* transform: translateY(-4px); */
 }
 
 .tool-logo {
@@ -315,26 +302,50 @@ nav .container .navbar-brand {
   height: 70px;
   display: flex;
   justify-content: center;
-  margin: 20px auto 10px auto;
+  align-items: center;
 }
 
 .tool-logo img {
-  max-width: 95%;
-  max-height: 95%;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
 }
-.custom-logo {
-  width: 100px;
-  height: auto;
-}
 
+.card-content {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  min-height: 50px;
+}
 .tool-card h6 {
   font-weight: 600;
-  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 10px;
 }
 
 .tool-card p {
-  line-height: 1rem;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.2;
+  min-height: 30px;
+}
+
+.tool-card .badge {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.tool-card .btn {
+  margin-top: auto;
+  font-size: 0.8rem;
+  padding: 5px 12px;
+  border-radius: 8px;
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+.tool-card .btn:hover {
+  color: #fff;
+  background-color: var(--bs-primary);
 }
 
 /* PROJECT SECTION */

@@ -86,7 +86,7 @@
 
       <!-- Projects Grid -->
       <div id="projectsContainer" class="row g-4 mb-5">
-        <div class="col-md-6 col-lg-4 project-item" data-category="Material, Research, Laboratory">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Material Research Laboratory">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -112,7 +112,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing, CAD">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing CAD">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -136,7 +136,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="Simulation, Energy">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Simulation Energy">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -186,7 +186,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="Programming, Python">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Programming Python">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -211,7 +211,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="Machine Learning, Programming, Python">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Machine Learning Programming Python">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -236,7 +236,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4 project-item" data-category="Energy, Laboratory">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Energy Laboratory">
           <div class="project-card h-100">
             <!-- Project Image -->
             <div class="project-image text-center">
@@ -270,19 +270,19 @@
           <h2 class="fw-bold mb-4">Project Statistics</h2>
           <div class="row g-4">
             <div class="col-6 col-md-3">
-              <div class="fs-2 fw-bold">7</div>
+              <div id="totalProjects" class="fs-2 fw-bold">0</div>
               <p class="sub-title text-light">Total Projects</p>
             </div>
             <div class="col-6 col-md-3">
-              <div class="fs-2 fw-bold">8</div>
+              <div id="totalCategories" class="fs-2 fw-bold">0</div>
               <p class="text-light">Categories</p>
             </div>
             <div class="col-6 col-md-3">
-              <div class="fs-2 fw-bold">9</div>
-              <p class="text-light">Technologies</p>
+              <div id="totalTech" class="fs-2 fw-bold">0</div>
+              <p class="text-light">Skills</p>
             </div>
             <div class="col-6 col-md-3">
-              <div class="fs-2 fw-bold">&lt;1</div>
+              <div id="Experience" class="fs-2 fw-bold">&lt;1</div>
               <p class="text-light">Years Experience</p>
             </div>
           </div>
@@ -301,6 +301,7 @@
     </div>
 
     <script>
+      // Filter Project by Category
       document.addEventListener("DOMContentLoaded", function () {
         const filterSelect = document.getElementById("categoryFilter");
         const resultCount = document.getElementById("resultCount");
@@ -314,7 +315,7 @@
             const itemCategory = item.getAttribute("data-category");
 
             // kalau pakai koma, pisah dulu
-            const categories = itemCategory.split(",").map((cat) => cat.trim());
+            const categories = itemCategory.split(" ").map((cat) => cat.trim());
 
             if (selectedCategory === "all" || categories.includes(selectedCategory)) {
               item.style.display = ""; // ✅ biarin bootstrap yang atur col nya
@@ -338,6 +339,30 @@
 
         // Initial
         updateResultCount(projectItems.length);
+      });
+
+      // Project Statistics
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ambil semua project
+        const projects = document.querySelectorAll(".project-item");
+
+        // Total Projects
+        document.getElementById("totalProjects").textContent = projects.length;
+
+        // Hitung Categories (dari data-category unik)
+        const categories = new Set();
+        projects.forEach((item) => {
+          const cats = item.getAttribute("data-category").split(" ");
+          cats.forEach((c) => categories.add(c));
+        });
+        document.getElementById("totalCategories").textContent = categories.size;
+
+        // Hitung Technologies (dari skill-badge unik)
+        const techs = new Set();
+        document.querySelectorAll(".skill-badge").forEach((badge) => {
+          techs.add(badge.textContent.trim());
+        });
+        document.getElementById("totalTech").textContent = techs.size;
       });
     </script>
   </body>
