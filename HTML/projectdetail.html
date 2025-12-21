@@ -26,7 +26,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
       <div class="container">
-        <a href="allprojects.html" class="back-link" onclick="goBack()" target="_blank">
+        <a href="allprojects.html" class="back-link" onclick="goBack()">
           <i class="bi bi-arrow-left me-2"></i>
           Back to Portfolio
         </a>
@@ -35,42 +35,34 @@
 
     <main class="main-content py-5">
       <div class="container py-5">
-        <!-- Header -->
-        <header class="header">
-          <div class="header-meta">
-            <span class="badge" id="project-category"></span>
-            <span class="divider">•</span>
-            <span style="color: hsl(var(--muted-foreground))" id="project-date"></span>
+        <div class="hero-wrapper text-center">
+          <img id="hero-img" src="" alt="Project Image" class="hero-img-static" />
+          <div class="hero-overlay"></div>
+          <div class="hero-content-static">
+            <span id="hero-category" class="badge bg-primary text-white mb-2"></span>
+            <h1 id="hero-title" class="display-5 fw-bold text-white mb-0 hero-text-shadow"></h1>
           </div>
-          <h1 class="title" id="project-title"></h1>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+          <div class="d-flex flex-wrap align-items-center gap-4 mb-4 text-muted">
+            <div class="d-flex align-items-center gap-2">
+              <i data-lucide="user" style="width: 20px; height: 20px"></i>
+              <span class="fw-semibold text-dark">Ripan Nurpaujan</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i data-lucide="calendar" style="width: 20px; height: 20px"></i>
+              <span id="project-date"></span>
+            </div>
+          </div>
           <p class="subtitle" id="project-subtitle"></p>
           <p class="description" id="project-description"></p>
-        </header>
+        </div>
 
         <div class="row g-4">
           <!-- Main Content -->
           <div class="col-lg-8">
-            <!-- Hero Image -->
-            <div class="card mb-4 text-center">
-              <div class="hero-image">
-                <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-                  <div class="carousel-inner" id="carousel-images">
-                    <!-- gambar project akan dimasukin lewat JS -->
-                  </div>
-
-                  <!-- tombol navigasi -->
-                  <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
             <!-- Project Overview -->
             <div class="card mb-4">
               <div class="card-header">
@@ -114,6 +106,39 @@
                 <div class="row g-3" id="results-container"></div>
               </div>
             </div>
+
+            <!-- Gallery -->
+            <div class="card mb-4" id="gallery-section" style="display: none">
+              <div class="card-header bg-white border-0 pt-4 px-4">
+                <h2 class="card-title fw-bold text-dark mb-0">Project Gallery</h2>
+              </div>
+              <div class="card-body p-4">
+                <div class="gallery-stage mb-3">
+                  <img id="gallery-main-img" src="" alt="Gallery Image" class="gallery-img-main" />
+                  <button id="btn-prev" class="gallery-nav prev" onclick="changeGalleryImage(-1)">❮</button>
+                  <button id="btn-next" class="gallery-nav next" onclick="changeGalleryImage(1)">❯</button>
+                  <button id="btn-fullscreen" class="fullscreen-btn" title="View Fullscreen"><i class="bi bi-fullscreen"></i></button>
+                  <div id="gallery-counter" class="gallery-counter"></div>
+                </div>
+                <div class="gallery-thumbs-container" id="gallery-thumbs"></div>
+              </div>
+            </div>
+
+            <!-- FULLSCREEN OVERLAY -->
+            <div id="fullscreenGallery" class="fullscreen-overlay">
+              <!-- Close -->
+              <button class="fs-close" onclick="closeFullscreen()">×</button>
+
+              <!-- Main Image -->
+              <div class="fs-main">
+                <button class="fs-nav prev" onclick="prevFS()">❮</button>
+                <img id="fsImage" src="" alt="Gallery Image" />
+                <button class="fs-nav next" onclick="nextFS()">❯</button>
+              </div>
+
+              <!-- Thumbnails -->
+              <div class="fs-thumbs" id="fsThumbs"></div>
+            </div>
           </div>
 
           <!-- Sidebar -->
@@ -151,6 +176,16 @@
                     <div class="info-value" id="info-category"></div>
                   </div>
                 </div>
+
+                <!-- <hr class="separator" />
+
+                <div class="info-item">
+                  <i data-lucide="external-link"></i>
+                  <div>
+                    <div class="info-label">Full Publication</div>
+                    <a id="info-link" href="#" target="_blank" class="text-primary text-decoration-none fw-semibold"> View Repository <i data-lucide="arrow-up-right" style="width: 14px"></i> </a>
+                  </div>
+                </div> -->
               </div>
             </div>
 
@@ -165,7 +200,7 @@
             </div>
 
             <!-- Other Projects -->
-            <div class="card mb-4">
+            <div class="card mb-4 other-projects">
               <header class="card-header">
                 <h3 class="card-title other-projects">Other Projects</h3>
               </header>

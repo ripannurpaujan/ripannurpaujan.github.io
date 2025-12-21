@@ -8,7 +8,7 @@ const projectData = {
     description: "Developed BN-PVC/PEG nanofiber membranes for heavy metal removal, achieving 39% Fe removal efficiency.",
     category: "Material Science & Engineering",
     date: "August 2025",
-    images: ["../img/Projects/nanofiber.jpg", "../img/Projects/contactangle.jpg"],
+    image: "../img/Projects/Nanofiber/nanofiber.jpg",
 
     overview_html: `
             <p>This project focused on the development of electrospun nanofiber membranes for heavy metal removal from groundwater. The objective was to enhance filtration efficiency while maintaining mechanical strength and chemical stability of the membrane material.</p>
@@ -46,6 +46,28 @@ const projectData = {
       { value: 43.7, text: "Increased water flux permeability" },
       { value: 39, text: "Fe filtration efficiency" },
     ],
+    //  --- GALLERY SECTION ---
+    gallery: [
+      // --- 1. VISUAL UTAMA (Introduction) ---
+      "../img/Projects/Nanofiber/nanofiber.jpg", // Gambar Utama: Struktur serat jelas
+
+      // --- 2. PROSES & METODOLOGI (Methodology) ---
+      "../img/Projects/Nanofiber/electrospinning.png", // Skema Alat: Menunjukkan pemahaman mesin (PENTING buat Mech Eng)
+      "../img/Projects/Nanofiber/alatpengujianair.png",
+      "../img/Projects/Nanofiber/Diagram alir penelitian A1.drawio.png",
+      "../img/Projects/Nanofiber/Diagram alir penelitian B new.drawio.png", // Alur Penelitian (Pilih satu yg paling representatif)
+      // "../img/Projects/Nanofiber/Diagram optimasi parameter.drawio (2).png", // (Opsional: Aktifkan jika ingin detail optimasi)
+
+      // --- 3. KARAKTERISASI MATERIAL (Material Science Analysis) ---
+      "../img/Projects/Nanofiber/wca.png", // Bukti Visual: Sifat Hidrofilik (Tetesan Air)
+      "../img/Projects/Nanofiber/sem images.png", // Analisis Data: Morfologi + Histogram Diameter (Bukti Skill Data Analysis)
+      "../img/Projects/Nanofiber/tegangan_regangan.png", // Uji Mekanis: Kurva Stress-Strain (Bukti Skill Testing Material)
+
+      // --- 4. HASIL KINERJA (Performance Results) ---
+      "../img/Projects/Nanofiber/rejeksi.png", // Hasil Utama: Grafik Efisiensi Penyaringan Fe (39%)
+      "../img/Projects/Nanofiber/fluxwater.png", // Hasil Pendukung: Permeabilitas Air (Flux)
+      "../img/Projects/Nanofiber/kondisiair.png",
+    ],
   },
   bedmanufacturing_id: {
     // Meta Header
@@ -55,7 +77,7 @@ const projectData = {
     subtitle: "Optimizing Production & Design for Healthcare Facilities",
     description: "Designed and manufactured hospital beds with improved ergonomics, durability, and assembly efficiency.",
     category: "Mechanical & Manufacturing Engineering",
-    date: "September 2025",
+    date: "September 2024",
     image: "../img/Projects/hospitalbed.jpg",
 
     overview_html: `
@@ -94,6 +116,9 @@ const projectData = {
       { value: 100, text: "Safety compliance (%)" },
       { value: 30, text: "Production efficiency improvement (%)" },
     ],
+    gallery: [
+      "../img/Projects/Nanofiber/nanofiber.jpg", // Gambar 1: Struktur SEM (Bisa sama dgn Hero)
+    ],
   },
   carboncapture_sim: {
     // Meta Header
@@ -104,7 +129,7 @@ const projectData = {
     description: "Simulated carbon capture process using ANSYS, analyzing gas flow and CO₂ absorption efficiency.",
     category: "Simulation & Process Engineering",
     date: "July 2025",
-    image: "../img/Projects/carbon_capture.jpg",
+    image: "..img/Projects/spaceX.jpg",
 
     overview_html: `
         <p>This project focused on simulating the carbon capture process in industrial gas streams using ANSYS Fluent. The objective was to optimize CO₂ absorption efficiency while minimizing pressure drop and energy consumption.</p>
