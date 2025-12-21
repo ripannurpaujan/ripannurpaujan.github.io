@@ -78,7 +78,7 @@ const projectData = {
     description: "Designed and manufactured hospital beds with improved ergonomics, durability, and assembly efficiency.",
     category: "Mechanical & Manufacturing Engineering",
     date: "September 2024",
-    image: "../img/Projects/Hospital Bed/hospitalbed.jpg",
+    image: "../img/Projects/HospitalBed/hospitalbed.jpg",
 
     overview_html: `
         <p>This project focused on the design and manufacturing of hospital beds optimized for patient comfort, staff ergonomics, and production efficiency. The goal was to enhance durability while maintaining cost-effectiveness.</p>
