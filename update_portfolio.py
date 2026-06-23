@@ -165,58 +165,134 @@ def build_js_entry(p):
     def esc(s):
         return s.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
 
-    # Overview → paragraf <p>
-    paras = [pr.strip() for pr in p["overview"].replace("\r\n", "\n").split("\n\n") if pr.strip()]
-    if not paras:
-        paras = [p["overview"]] if p["overview"] else ["—"]
-    overview_html = "".join(
-        f"<p>{esc(pr.replace(chr(10), ' '))}</p>" for pr in paras
-    )
-
-    # Arrays
-    challenges = [c.strip() for c in p["challenges"].split(";") if c.strip()]
-    solutions  = [s.strip() for s in p["solutions"].split(";") if s.strip()]
-    skills     = [s.strip() for s in p["skills"].split(",") if s.strip()]
-    gallery    = [g.strip() for g in p["gallery"].split(";") if g.strip()]
-
-    # tags array dari kolom categories (pisah spasi)
-    tags = [t.strip() for t in p["categories"].split(",") if t.strip()]
-
-    # Results
-    vals = [v.strip() for v in p["res_val"].split("|") if v.strip()]
-    txts = [t.strip() for t in p["res_txt"].split("|") if t.strip()]
-    results = []
-    for v, t in zip(vals, txts):
-        try:
-            num = float(v)
-            num = int(num) if num == int(num) else num
-        except ValueError:
-            num = v
-        results.append({"value": num, "text": t})
-
-    subtitle = esc(p["description"])
-
-    e  = f'  {p["id"]}: {{\n'
-    e += f'    title:        "{esc(p["title"])}",\n'
-    e += f'    subtitle:     "{subtitle}",\n'
-    e += f'    description:  "{subtitle}",\n'
-    e += f'    category:     "{esc(p["category"])}",\n'
-    e += f'    tags:         {json.dumps(tags, ensure_ascii=False)},\n'
-    e += f'    date:         "{p["date"]}",\n'
-    e += f'    image:        "{p["image_path"]}",\n'
-    e += f'    overview:     `{overview_html}`,\n'
-    e += f'    client:       "{esc(p["client"])}",\n'
-    e += f'    duration:     "{p["duration"]}",\n'
-    e += f'    skills:       {json.dumps(skills, ensure_ascii=False)},\n'
-    e += f'    challenges:   {json.dumps(challenges, ensure_ascii=False)},\n'
-    e += f'    solutions:    {json.dumps(solutions, ensure_ascii=False)},\n'
-    e += f'    results:      {json.dumps(results, ensure_ascii=False)},\n'
-    e += f'    gallery:      {json.dumps(gallery, ensure_ascii=False)},\n'
-    e += f'    pub_url:      "{esc(p["pub_url"])}"\n'
-    e += f'  }}'
-    return e
+    # Overview → jika sudah ada HTML tags, pakai as-is
+    # Jika plain text, wrap tiap paragraf (pisah baris kosong) jadi <p>
+    raw_overview = p["overview"].replace("\r\n", "\n").strip()
+    # Overview parsing
 
 
+    # Jika sudah HTML, pakai apa adanya
+    if any(tag in raw_overview.lower() for tag in ("<p>", "<ul>", "<ol>", "<li>")):
+        overview_html = esc(raw_overview)
+
+    else:
+        lines = [line.strip() for line in raw_overview.splitlines()]
+
+        html_parts = []
+        bullet_items = []
+
+        for line in lines:
+
+            # baris kosong → flush list jika ada
+            if not line:
+                if bullet_items:
+                    html_parts.append(
+                        "<ul>" +
+                        "".join(
+                            f"<li>{esc(item)}</li>"
+                            for item in bullet_items
+                        ) +
+                        "</ul>"
+                    )
+                    bullet_items = []
+                continue
+
+            # bullet list
+            if line.startswith("- "):
+                bullet_items.append(line[2:].strip())
+
+            else:
+                # tutup list sebelumnya kalau ada
+                if bullet_items:
+                    html_parts.append(
+                        "<ul>" +
+                        "".join(
+                            f"<li>{esc(item)}</li>"
+                            for item in bullet_items
+                        ) +
+                        "</ul>"
+                    )
+                    bullet_items = []
+
+                html_parts.append(
+                    f"<p>{esc(line)}</p>"
+                )
+
+        # flush list terakhir
+        if bullet_items:
+            html_parts.append(
+                "<ul>" +
+                "".join(
+                    f"<li>{esc(item)}</li>"
+                    for item in bullet_items
+                ) +
+                "</ul>"
+            )
+
+        overview_html = "".join(html_parts)
+
+        if not overview_html:
+            overview_html = "<p>—</p>"
+
+        # Arrays
+        challenges = [c.strip() for c in p["challenges"].split(";") if c.strip()]
+        solutions  = [s.strip() for s in p["solutions"].split(";") if s.strip()]
+        skills     = [s.strip() for s in p["skills"].split(",") if s.strip()]
+        gallery    = [g.strip() for g in p["gallery"].split(";") if g.strip()]
+
+        # tags array dari kolom categories (pisah spasi)
+        tags = [t.strip() for t in p["categories"].split(",") if t.strip()]
+
+        # Results
+        vals = [v.strip() for v in p["res_val"].split("|") if v.strip()]
+        txts = [t.strip() for t in p["res_txt"].split("|") if t.strip()]
+        results = []
+        for v, t in zip(vals, txts):
+            try:
+                num = float(v)
+                num = int(num) if num == int(num) else num
+            except ValueError:
+                num = v
+            results.append({"value": num, "text": t})
+
+        subtitle = esc(p["description"])
+
+        e  = f'  {p["id"]}: {{\n'
+        e += f'    title:        "{esc(p["title"])}",\n'
+        e += f'    subtitle:     "{subtitle}",\n'
+        e += f'    description:  "{subtitle}",\n'
+        e += f'    category:     "{esc(p["category"])}",\n'
+        e += f'    tags:         {json.dumps(tags, ensure_ascii=False)},\n'
+        e += f'    date:         "{p["date"]}",\n'
+        e += f'    image:        "{p["image_path"]}",\n'
+        e += f'    overview:     `{overview_html}`,\n'
+        e += f'    client:       "{esc(p["client"])}",\n'
+        e += f'    duration:     "{p["duration"]}",\n'
+        e += f'    skills:       {json.dumps(skills, ensure_ascii=False)},\n'
+        e += f'    challenges:   {json.dumps(challenges, ensure_ascii=False)},\n'
+        e += f'    solutions:    {json.dumps(solutions, ensure_ascii=False)},\n'
+        e += f'    results:      {json.dumps(results, ensure_ascii=False)},\n'
+        e += f'    gallery:      {json.dumps(gallery, ensure_ascii=False)},\n'
+        e += f'    pub_url:      "{esc(p["pub_url"])}"\n'
+        e += f'  }}'
+        return e
+
+
+
+def update_cache_bust():
+    """Update ?v= query string di projectdetail.html supaya browser tidak cache file lama."""
+    detail_html = REPO_ROOT / "HTML" / "projectdetail.html"
+    if not detail_html.exists():
+        print("  ⚠  HTML/projectdetail.html tidak ditemukan, skip cache bust.")
+        return
+
+    html = detail_html.read_text(encoding="utf-8")
+    v = datetime.now().strftime("%Y%m%d%H%M")
+    # Ganti ?v=xxx lama atau tambah baru di script src
+    html = re.sub(r"(projectdata\.js)(\?v=\w*)?", "\\g<1>?v=" + v, html)
+    html = re.sub(r"(projectdetails\.js)(\?v=\w*)?", "\\g<1>?v=" + v, html)
+    detail_html.write_text(html, encoding="utf-8")
+    print(f"  ✓ Cache bust diupdate: ?v={v}")
 def update_js(projects):
     entries = ",\n".join(build_js_entry(p) for p in projects)
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -241,6 +317,7 @@ def main():
     print("\n  🏗️  Update HTML & JS...")
     update_html(projects)
     update_js(projects)
+    update_cache_bust()
     print(f"\n✅  Selesai! {len(projects)} proyek diupdate.\n")
 
 if __name__ == "__main__":
