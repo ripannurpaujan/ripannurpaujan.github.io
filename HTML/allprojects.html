@@ -32,7 +32,6 @@
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#about">About</a></li>
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#projects">Projects</a></li>
-            <!-- <li class="nav-item"><a class="nav-link fw-medium" href="#testimonials">Testimonials</a></li> -->
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#faq">FAQ</a></li>
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#contact">Contact</a></li>
           </ul>
@@ -68,27 +67,44 @@
               <option value="Material">Material</option>
               <option value="Manufacturing">Manufacturing</option>
               <option value="Simulation">Simulation</option>
-              <option value="Laboratory">Laboratory</option>
-              <option value="Machine Learning">Machine Learning</option>
-              <option value="CAD">CAD</option>
-              <option value="Python">Python</option>
               <option value="Energy">Energy</option>
+              <option value="Lab">Laboratory</option>
+              <option value="CAD">CAD</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Python">Python</option>
+              <option value="Academic">Academic</option>
             </select>
             <span id="resultCount" class="ms-3 text-muted"></span>
           </div>
-
-          <!-- Result count -->
-          <!-- <div class="col-auto">
-            <span id="resultCount" class="text-muted small"> 9 projects found </span>
-          </div> -->
         </div>
       </div>
 
-      <!-- Projects Grid -->
-      <div
-        id="projectsContainer"
-        class="row g-4 mb-5">
-        <div class="col-md-6 col-lg-4 project-item" data-category="Material Research Laboratory">
+      <!-- Projects Grid — rendered by JS from projectData -->
+      <div id="projectsContainer" class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">📊</span>
+                <p class="project-category">Manufacturing</p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Production Dashboard: Manufacturing Performance Monitoring</h3>
+              <p class="project-description">Built an end-to-end automated production monitoring system — Excel log ingestion to MySQL to Power BI — covering output, downtime, waste, and machine breakdown KPIs.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Power BI</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">Data Engineering</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=np1_dashboard" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 project-item" data-category="Material Research Lab">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -109,7 +125,95 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing CAD">
+        <div class="col-md-6 col-lg-4 project-item" data-category="Data Science Python Academic">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">🤖</span>
+                <p class="project-category">Machine Learning</p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Mini Project: Car Price Prediction</h3>
+              <p class="project-description">Built ML regression models for used car price prediction; Decision Tree achieved R² = 0.94 as best performer.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">Data Analysis</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=car_price_prediction" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 project-item" data-category="Academic Python">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">💻</span>
+                <p class="project-category">Numerical Methods</p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Mini Project: Numerical Methods</h3>
+              <p class="project-description">Implemented Python programs for solving engineering problems using iterative numerical methods, verified against analytical solutions.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Numerical Analysis</span>
+                <span class="skill-badge">Teamwork</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=numerical_methods_project" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 project-item" data-category="Lab Research">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">⤴</span>
+                <p class="project-category">Laboratory</p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Fluid Mechanics Laboratory Assistant</h3>
+              <p class="project-description">Guided 25 students through pump and flow experiments, ensuring accurate measurements and proper lab safety.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Teaching</span>
+                <span class="skill-badge">Fluid Dynamics</span>
+                <span class="skill-badge">Data Analysis</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=fluid_lab_asst" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 project-item" data-category="Lab Research">
+          <div class="project-card h-100">
+            <div class="project-image text-center">
+              <div>
+                <span class="project-icon">🔧</span>
+                <p class="project-category">Laboratory</p>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Structural Statics Laboratory Assistant</h3>
+              <p class="project-description">Assisted in the Structural Statics Laboratory, guiding students through experiments and ensuring accurate data collection.</p>
+              <div class="project-skills">
+                <span class="skill-badge">Teaching</span>
+                <span class="skill-badge">Lab Safety</span>
+                <span class="skill-badge">Evaluation</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="../HTML/projectdetail.html?id=structural_lab_asst" class="project-btn">View Details →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing CAD Simulation">
           <div class="project-card h-100">
             <div class="project-image text-center">
               <div>
@@ -118,7 +222,7 @@
             </div>
             <div class="project-content">
               <h3 class="project-title">Hospital Bed Manufacturing</h3>
-              <p class="project-description">Designed a hospital bed prototype supporting ~150 kg, overseeing design, materials, and fabrication.</p>
+              <p class="project-description">Designed and fabricated a hospital bed prototype supporting ~150 kg, leading a 7-person team across design, material selection, and fabrication.</p>
               <div class="project-skills">
                 <span class="skill-badge">CAD</span>
                 <span class="skill-badge">Manufacturing</span>
@@ -140,7 +244,7 @@
             </div>
             <div class="project-content">
               <h3 class="project-title">Carbon Capture Simulation</h3>
-              <p class="project-description">Simulated CO₂ absorption column using ANSYS Fluent, analyzing gas flow and absorption efficiency.</p>
+              <p class="project-description">Simulated a CO₂ absorption column using ANSYS Fluent with multiphase flow modeling, analyzing gas flow distribution and absorption efficiency.</p>
               <div class="project-skills">
                 <span class="skill-badge">ANSYS</span>
                 <span class="skill-badge">Simulation</span>
@@ -149,117 +253,6 @@
             </div>
             <div class="project-footer">
               <a href="../HTML/projectdetail.html?id=carboncapture_sim" class="project-btn">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="Laboratory">
-          <div class="project-card h-100">
-            <div class="project-image text-center">
-              <div>
-                <span class="project-icon">🔧</span>
-                <p class="project-category">Laboratory</p>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Structural Statics Laboratory Assistant</h3>
-              <p class="project-description">Assisted in the Structural Statics Laboratory by monitoring students and supporting practicum completion.</p>
-              <div class="project-skills">
-                <span class="skill-badge">Teaching</span>
-                <span class="skill-badge">Lab Safety</span>
-                <span class="skill-badge">Evaluation</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="../HTML/projectdetail.html?id=structural_lab_asst" class="project-btn">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="Programming Python">
-          <div class="project-card h-100">
-            <div class="project-image text-center">
-              <div>
-                <span class="project-icon">💻</span>
-                <p class="project-category">Numerical Methods</p>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Mini Project: Numerical Methods</h3>
-              <p class="project-description">Developed Python programs for solving linear and quadratic systems using iterative numerical methods.</p>
-              <div class="project-skills">
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Numerical Analysis</span>
-                <span class="skill-badge">Teamwork</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="../HTML/projectdetail.html?id=numerical_methods_project" class="project-btn">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="Machine Learning Programming Python">
-          <div class="project-card h-100">
-            <div class="project-image text-center">
-              <div>
-                <span class="project-icon">🤖</span>
-                <p class="project-category">Machine Learning</p>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Mini Project: Car Price Prediction</h3>
-              <p class="project-description">Developed ML models, with Decision Tree achieving R² = 0.94, and handled preprocessing and reporting.</p>
-              <div class="project-skills">
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Machine Learning</span>
-                <span class="skill-badge">Data Analysis</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="../HTML/projectdetail.html?id=car_price_prediction" class="project-btn">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="Energy Laboratory">
-          <div class="project-card h-100">
-            <div class="project-image text-center">
-              <div>
-                <span class="project-icon">⤴</span>
-                <p class="project-category">Energy</p>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Fluid Mechanics Laboratory Assistant</h3>
-              <p class="project-description">Guided 25 students in pump experiments, ensuring accurate measurements and improved fluid understanding.</p>
-              <div class="project-skills">
-                <span class="skill-badge">Teaching</span>
-                <span class="skill-badge">Fluid Dynamics</span>
-                <span class="skill-badge">Data Analysis</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="../HTML/projectdetail.html?id=fluid_lab_asst" class="project-btn">View Details →</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing">
-          <div class="project-card h-100">
-            <div class="project-image text-center">
-              <div>
-                <span class="project-icon"></span>
-                <p class="project-category">Manufacturing</p>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3 class="project-title">Production Dashboard: Manufacturing Performance Monitoring System</h3>
-              <p class="project-description">Developed an automated production dashboard to monitor key manufacturing KPIs including output, defect rate, downtime, and efficiency. The system integrates data processing, visualization, and reporting to support real-time decision-making in production environments.</p>
-              <div class="project-skills">
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Power BI</span>
-                <span class="skill-badge">MySQL</span>
-                <span class="skill-badge">Data Engineering</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a href="../HTML/projectdetail.html?id=np1_dashboard" class="project-btn">View Details →</a>
             </div>
           </div>
         </div>
@@ -291,208 +284,133 @@
       </div>
     </main>
 
-    <!-- Contact -->
-
     <!-- Footer -->
     <div class="site-footer">
       <div class="container">
-        <p>© 2024 Ripan Nurpaujan. All rights reserved.</p>
+        <p>&copy; 2024 Ripan Nurpaujan. All rights reserved.</p>
         <p>Mechanical Engineer | Material Engineer | Simulation Engineer | Mechanical Design</p>
       </div>
     </div>
 
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
+    <!-- LIBRARIES -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  const filterSelect =
-    document.getElementById("categoryFilter");
-
-  const resultCount =
-    document.getElementById("resultCount");
-
-  function updateResultCount(count) {
-    const projectText =
-      count === 1 ? "project" : "projects";
-
-    resultCount.textContent =
-      `${count} ${projectText} found`;
-  }
-
-  function filterProjects() {
-
-    const projectItems =
-      document.querySelectorAll(".project-item");
-
-    const selectedCategory =
-      filterSelect.value;
-
-    let visibleCount = 0;
-
-    projectItems.forEach((item) => {
-
-      const itemCategory =
-        item.getAttribute("data-category") || "";
-
-      const categories =
-        itemCategory.split(" ").map(cat => cat.trim());
-
-      if (
-        selectedCategory === "all" ||
-        categories.includes(selectedCategory)
-      ) {
-
-        item.style.display = "";
-        visibleCount++;
-
-      } else {
-
-        item.style.display = "none";
-
-      }
-
-    });
-
-    updateResultCount(visibleCount);
-  }
-
-  function updateStatistics() {
-
-    if (typeof projectData === "undefined") {
-      console.error("projectData not loaded");
-      return;
-    }
-
-    const projects =
-      Object.values(projectData);
-
-    document.getElementById(
-      "totalProjects"
-    ).textContent = projects.length;
-
-    const categories = new Set();
-
-    projects.forEach((project) => {
-
-      if (project.category) {
-        categories.add(project.category);
-      }
-
-    });
-
-    document.getElementById(
-      "totalCategories"
-    ).textContent = categories.size;
-
-    const skills = new Set();
-
-    projects.forEach((project) => {
-
-      (project.skills || []).forEach((skill) => {
-        skills.add(skill);
-      });
-
-    });
-
-    document.getElementById(
-      "totalTech"
-    ).textContent = skills.size;
-  }
-
-  filterSelect.addEventListener(
-    "change",
-    filterProjects
-  );
-
-  filterProjects();
-  updateStatistics();
-
-});
-</script>
-
-
-
-
+    <!-- Load Data FIRST so projectData is available when the script below runs -->
     <script src="../Data/projectdata.js"></script>
 
     <script>
-document.addEventListener("DOMContentLoaded", () => {
+      (function () {
 
-  const container =
-    document.getElementById("projectsContainer");
+        /* =============================================
+           RENDER CARDS from projectData
+        ============================================= */
+        const container = document.getElementById("projectsContainer");
+        container.innerHTML = "";
 
-  container.innerHTML = "";
+        // Sort by date descending (newest first)
+        const monthMap = {
+          "January":1,"February":2,"March":3,"April":4,"May":5,"June":6,
+          "July":7,"August":8,"September":9,"October":10,"November":11,"December":12
+        };
+        function parseDate(dateStr) {
+          if (!dateStr) return 0;
+          // Handle range "December 2024 - July 2025" — sort by end date
+          const parts = dateStr.includes(" - ")
+            ? dateStr.split(" - ").pop().trim()
+            : dateStr.trim();
+          const [month, year] = parts.split(" ");
+          return (parseInt(year) || 0) * 100 + (monthMap[month] || 0);
+        }
 
-  Object.entries(projectData).forEach(([id, project]) => {
+        const sorted = Object.entries(projectData).sort(
+          ([, a], [, b]) => parseDate(b.date) - parseDate(a.date)
+        );
 
-    const imageContent = project.image
-      ? `<img src="${project.image}" alt="${project.title}" />`
-      : `
-        <span class="project-icon">📁</span>
-        <p class="project-category">
-          ${project.category}
-        </p>
-      `;
+        sorted.forEach(([id, project]) => {
+          const imageContent = project.image
+            ? `<img src="${project.image}" alt="${project.title}" />`
+            : `<span class="project-icon">&#128193;</span>
+               <p class="project-category">${project.category}</p>`;
 
-    const skills = (project.skills || [])
-      .slice(0, 3)
-      .map(skill =>
-        `<span class="skill-badge">${skill}</span>`
-      )
-      .join("");
+          const skills = (project.skills || [])
+            .slice(0, 3)
+            .map(skill => `<span class="skill-badge">${skill}</span>`)
+            .join("");
 
-    const card = `
-      <div
-        class="col-md-6 col-lg-4 project-item"
-        data-category="${project.category}">
+          // Store tags as data-tags attribute (space-separated)
+          const tagsAttr = (project.tags || [project.category]).join(" ");
 
-        <div class="project-card h-100">
+          const card = `
+            <div class="col-md-6 col-lg-4 project-item" data-tags="${tagsAttr}">
+              <div class="project-card h-100">
+                <div class="project-image text-center">
+                  <div>${imageContent}</div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">${project.title}</h3>
+                  <p class="project-description">${project.subtitle}</p>
+                  <div class="project-skills">${skills}</div>
+                </div>
+                <div class="project-footer">
+                  <a href="../HTML/projectdetail.html?id=${id}" class="project-btn">View Details &rarr;</a>
+                </div>
+              </div>
+            </div>`;
 
-          <div class="project-image text-center">
-            <div>
-              ${imageContent}
-            </div>
-          </div>
+          container.insertAdjacentHTML("beforeend", card);
+        });
 
-          <div class="project-content">
+        /* =============================================
+           FILTER — uses data-tags (multi-tag support)
+        ============================================= */
+        const filterSelect = document.getElementById("categoryFilter");
+        const resultCount  = document.getElementById("resultCount");
 
-            <h3 class="project-title">
-              ${project.title}
-            </h3>
+        function updateResultCount(count) {
+          resultCount.textContent = `${count} ${count === 1 ? "project" : "projects"} found`;
+        }
 
-            <p class="project-description">
-              ${project.subtitle}
-            </p>
+        function filterProjects() {
+          const selected = filterSelect.value;
+          const items = document.querySelectorAll(".project-item");
+          let visible = 0;
 
-            <div class="project-skills">
-              ${skills}
-            </div>
+          items.forEach(item => {
+            const tags = (item.getAttribute("data-tags") || "").split(" ");
+            const show = selected === "all" || tags.includes(selected);
+            item.style.display = show ? "" : "none";
+            if (show) visible++;
+          });
 
-          </div>
+          updateResultCount(visible);
+        }
 
-          <div class="project-footer">
-            <a
-              href="../HTML/projectdetail.html?id=${id}"
-              class="project-btn">
+        filterSelect.addEventListener("change", filterProjects);
 
-              View Details →
-            </a>
-          </div>
+        /* =============================================
+           STATISTICS — auto-count from projectData
+        ============================================= */
+        function updateStatistics() {
+          const projects = Object.values(projectData);
 
-        </div>
+          // Total projects
+          document.getElementById("totalProjects").textContent = projects.length;
 
-      </div>
-    `;
+          // Unique categories (from tags, not category field)
+          const allTags = new Set();
+          projects.forEach(p => (p.tags || [p.category]).forEach(t => allTags.add(t)));
+          document.getElementById("totalCategories").textContent = allTags.size;
 
-    container.insertAdjacentHTML(
-      "beforeend",
-      card
-    );
+          // Unique skills
+          const allSkills = new Set();
+          projects.forEach(p => (p.skills || []).forEach(s => allSkills.add(s)));
+          document.getElementById("totalTech").textContent = allSkills.size;
+        }
 
-  });
-
-  updateStatistics();
-
-});
+        // Run on load
+        filterProjects();
+        updateStatistics();
+      })();
     </script>
   </body>
 </html>
