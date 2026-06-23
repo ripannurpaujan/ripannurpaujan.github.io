@@ -32,6 +32,7 @@
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#about">About</a></li>
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#projects">Projects</a></li>
+            <!-- <li class="nav-item"><a class="nav-link fw-medium" href="#testimonials">Testimonials</a></li> -->
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#faq">FAQ</a></li>
             <li class="nav-item"><a class="nav-link fw-medium" href="../index.html#contact">Contact</a></li>
           </ul>
@@ -67,20 +68,21 @@
               <option value="Material">Material</option>
               <option value="Manufacturing">Manufacturing</option>
               <option value="Simulation">Simulation</option>
-              <option value="Energy">Energy</option>
-              <option value="Lab">Laboratory</option>
+              <option value="Laboratory">Laboratory</option>
+              <option value="Machine Learning">Machine Learning</option>
               <option value="CAD">CAD</option>
-              <option value="Data Science">Data Science</option>
               <option value="Python">Python</option>
-              <option value="Academic">Academic</option>
+              <option value="Energy">Energy</option>
             </select>
             <span id="resultCount" class="ms-3 text-muted"></span>
           </div>
         </div>
       </div>
 
-      <!-- Projects Grid — rendered by JS from projectData -->
-      <div id="projectsContainer" class="row g-4 mb-5">
+      <!-- Projects Grid - rendered by JS from projectData-->
+      <div
+        id="projectsContainer"
+        class="row g-4 mb-5">
         <div class="col-md-6 col-lg-4 project-item" data-category="Manufacturing">
           <div class="project-card h-100">
             <div class="project-image text-center">
@@ -287,7 +289,7 @@
     <!-- Footer -->
     <div class="site-footer">
       <div class="container">
-        <p>&copy; 2024 Ripan Nurpaujan. All rights reserved.</p>
+        <p>© 2024 Ripan Nurpaujan. All rights reserved.</p>
         <p>Mechanical Engineer | Material Engineer | Simulation Engineer | Mechanical Design</p>
       </div>
     </div>
@@ -307,26 +309,7 @@
         const container = document.getElementById("projectsContainer");
         container.innerHTML = "";
 
-        // Sort by date descending (newest first)
-        const monthMap = {
-          "January":1,"February":2,"March":3,"April":4,"May":5,"June":6,
-          "July":7,"August":8,"September":9,"October":10,"November":11,"December":12
-        };
-        function parseDate(dateStr) {
-          if (!dateStr) return 0;
-          // Handle range "December 2024 - July 2025" — sort by end date
-          const parts = dateStr.includes(" - ")
-            ? dateStr.split(" - ").pop().trim()
-            : dateStr.trim();
-          const [month, year] = parts.split(" ");
-          return (parseInt(year) || 0) * 100 + (monthMap[month] || 0);
-        }
-
-        const sorted = Object.entries(projectData).sort(
-          ([, a], [, b]) => parseDate(b.date) - parseDate(a.date)
-        );
-
-        sorted.forEach(([id, project]) => {
+        Object.entries(projectData).forEach(([id, project]) => {
           const imageContent = project.image
             ? `<img src="${project.image}" alt="${project.title}" />`
             : `<span class="project-icon">&#128193;</span>
