@@ -1,6 +1,6 @@
 # Portfolio Auto-Updater
 
-Script untuk update web portfolio `ripannurpaujan.github.io` secara otomatis dari file CSV.
+Script untuk update web portfolio `ripannurpaujan.github.io` secara otomatis dari file Excel.
 
 ## Setup (sekali saja)
 
@@ -16,32 +16,33 @@ git config --global user.email "fauzanivan21@gmail.com"
 
 ## Cara pakai (setiap mau update)
 
-### 1. Edit file CSV
-Buka `data/projects.csv` di Excel. Tambah baris baru untuk proyek baru.
+### 1. Edit file Excel
+Buka `projects.xlsx` di Excel. Data proyek dimulai dari **baris 5** (4 baris pertama adalah header).
 
 | Kolom | Keterangan |
 |-------|-----------|
 | `id` | ID unik proyek (huruf kecil, underscore, no spasi) |
 | `title` | Judul proyek |
 | `short_desc` | Deskripsi singkat (1–2 kalimat) |
-| `category` | Kategori: Research / Simulation / Manufacturing / Python / dll |
-| `tags` | Tag dipisah koma: `Python,Power BI,MySQL` |
+| `category` | Kategori: `Research` / `Simulation` / `Manufacturing` / `Data` / dll |
+| `tags` | Tag dipisah pipe: `Python\|Power BI\|MySQL` |
 | `image_path` | Path relatif dari root repo: `img/Projects/Dashboard/kpi.png` |
-| `status` | `Published` atau `In Progress` atau `Draft` |
+| `status` | `Published` / `In Progress` / `Draft` |
 | `date` | Format `YYYY-MM`: `2026-01` |
 | `client` | Nama perusahaan/institusi |
 | `duration` | Contoh: `3 months`, `Ongoing` |
 | `full_pub_url` | Link publikasi (kosongkan kalau ga ada) |
 | `overview` | Deskripsi lengkap proyek |
-| `challenges` | Tantangan yang dihadapi |
-| `solutions` | Solusi yang dipakai |
-| `results` | Hasil & pencapaian |
-| `gallery_images` | Path gambar dipisah `\|`: `img/p1.png\|img/p2.png` |
+| `challenges` | Tantangan — dipisah semicolon: `Tantangan 1;Tantangan 2` |
+| `solutions` | Solusi — dipisah semicolon: `Solusi 1;Solusi 2` |
+| `res_val` | Nilai hasil pencapaian — dipisah pipe: `39%\|7` |
+| `res_txt` | Label hasil pencapaian — dipisah pipe: `Fe Removal\|Team Size` |
+| `gallery` | Path gambar gallery — dipisah semicolon: `img/p1.png;img/p2.png` |
 
 ### 2. Jalanin script
 Dari root repo lo:
 ```bash
-python scripts/update_portfolio.py
+python update_portfolio.py
 ```
 
 Done! Portfolio akan update otomatis di GitHub Pages ~30 detik kemudian.
@@ -49,16 +50,19 @@ Done! Portfolio akan update otomatis di GitHub Pages ~30 detik kemudian.
 ## Options
 
 ```bash
-# Preview dulu tanpa nulis file
-python scripts/update_portfolio.py --dry-run
-
-# Update file HTML tapi ga push (buat review dulu)
-python scripts/update_portfolio.py --no-push
+# Update file tapi ga push ke GitHub (buat review dulu)
+python update_portfolio.py --no-push
 ```
 
-## File yang di-generate otomatis
-- `HTML/allprojects.html` — halaman daftar semua proyek
-- `HTML/projectdetail.html` — halaman detail proyek (data-driven, semua ID)
+## File yang diupdate otomatis
 
-**Jangan edit manual dua file ini** — akan ke-overwrite setiap kali script dijalanin.
-Yang perlu diedit cuma `data/projects.csv`.
+| File | Yang diubah |
+|------|-------------|
+| `HTML/allprojects.html` | Inject project cards ke dalam `<div id="projectsContainer">` |
+| `Data/projectdata.js` | Update data array untuk halaman project detail |
+
+### Aturan penting
+- Script hanya mengubah **isi** `projectsContainer` di `allprojects.html` — navbar, filter, stats section, footer, CSS, dan JS **tidak disentuh**
+- `Data/projectdata.js` menggunakan format array JS murni (`challenges`, `solutions`, `gallery` sebagai array, bukan string HTML) agar kompatibel dengan `.map()` di `projectdetails.js`
+- **Jangan edit manual** kedua file di atas — akan ke-overwrite setiap kali script dijalanin
+- Kalau ada yang rusak, recovery via: `git reset --hard <commit> && git push --force`
