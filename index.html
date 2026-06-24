@@ -115,7 +115,7 @@
               <!-- Statistik -->
               <div class="row text-center text-md-start mb-4">
                 <div class="col-4">
-                  <h3 id="totalProjects" class="text-accent">7+</h3>
+                  <h3 id="totalProjects" class="text-accent">3</h3>
                   <p>Projects Completed</p>
                 </div>
                 <div class="col-4">
@@ -557,22 +557,6 @@
         <p>Mechanical Engineer | Material Engineer | Simulation Engineer | Mechanical Design</p>
       </div>
     </div>
-
-    <!-- Dynamic Project Count -->
-    <script>
-      fetch('HTML/allprojects.html')
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          const count = doc.querySelectorAll('.project-item').length;
-          const el = document.getElementById('totalProjects');
-          if (el && count > 0) el.textContent = count + '+';
-        })
-        .catch(() => {
-          // fallback ke nilai default kalau fetch gagal
-        });
-    </script>
 
     <!-- FONT AWESOME -->
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
