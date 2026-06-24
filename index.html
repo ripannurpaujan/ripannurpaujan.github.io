@@ -116,14 +116,14 @@
               <div class="row text-center text-md-start mb-4">
                 <div class="col-4">
                   <h3 id="totalProjects" class="text-accent">7+</h3>
-                  <p>Project Completed</p>
+                  <p>Projects Completed</p>
                 </div>
                 <div class="col-4">
-                  <h3 class="text-accent">2</h3>
-                  <p>Industries Covered</p>
+                  <h3 class="text-accent">4</h3>
+                  <p>Certifications</p>
                 </div>
                 <div class="col-4">
-                  <h3 class="text-accent">1+</h3>
+                  <h3 class="text-accent">1</h3>
                   <p>Years of Experience</p>
                 </div>
               </div>
@@ -553,10 +553,26 @@
     <!-- Footer Section-->
     <div class="site-footer">
       <div class="container">
-        <p>© 2025 Ripan Nurpaujan. All rights reserved.</p>
-        <p>Production Engineer · Data Engineer · Mechanical Engineer | Python · MySQL · Power BI · ANSYS · SolidWorks</p>
+        <p>&copy; 2026 Ripan Nurpaujan. All rights reserved.</p>
+        <p>Mechanical Engineer | Material Engineer | Simulation Engineer | Mechanical Design</p>
       </div>
     </div>
+
+    <!-- Dynamic Project Count -->
+    <script>
+      fetch('HTML/allprojects.html')
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const count = doc.querySelectorAll('.project-item').length;
+          const el = document.getElementById('totalProjects');
+          if (el && count > 0) el.textContent = count + '+';
+        })
+        .catch(() => {
+          // fallback ke nilai default kalau fetch gagal
+        });
+    </script>
 
     <!-- FONT AWESOME -->
     <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
